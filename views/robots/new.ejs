@@ -25,15 +25,14 @@
 
     </form><br>
        
-      <div align="center" class ="edit-sub">
+      <div align="center" class ="new-edit-buttons">
       <button col text-center id="submit" type="submit" class="btn  btn-primary">Submit</button>
+      <a href="/robots/"class="btn btn-info btn-sm">Back</a>
       </div>
-      <br>
-        
-      <div align="center" class ="back-btn"><a href="/robots/">
-      <button col text-center id="back" type="back" class="btn  btn-info">Back</button>
-      </div>
-
+      
+      
+      <hr style="margin-top:2em;">
+      <% include ../footer %>
    
     <script type="text/javascript">
     var inputName = document.getElementById("name")
@@ -59,7 +58,7 @@
             window.location = '/robots'
           })
         } else {
-          alert("Error. Please fill enter the Robots info.")
+          alert("Error. Please enter the Robots info.")
         }
       })
     }
