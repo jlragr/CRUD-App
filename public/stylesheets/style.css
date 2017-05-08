@@ -2,8 +2,21 @@ body {
   background-color: lightsteelblue !important;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  text-align: center;
+  text-align: center  !important;
 }
+
+input{
+  text-align: center;
+  align-self:middle !important;
+}
+
+
+textarea{
+  text-align: center;
+  display:inline-block !important;
+  vertical-align:middle !important;
+}
+
 
 a {
   color: #00B7FF;
