@@ -10,26 +10,31 @@
     <h1><%= title %></h1>
 
     <br>
-    <form id="new-robot-form" action="https://southernct-443-robots-api.herokuapp.com/api/robots" method="POST">
-      <label class="text-center" for="name">Name</label>
-      <input align="center" id="name" name="name" type="text" placeholder="Robot">
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+  	<label class="control-label col-xs-offset-2 col-sm-2" for="name">Name</label>
+    <div class="col-xs-4" ><input type="name" class="form-control" align="center" id="name" placeholder="Robot" ></div>
+  </div>
+  <br>
+  
+   <div class="form-group">
+   <label class="control-label col-xs-offset-2 col-sm-2" for="description">Description</label>
+    <div class="col-xs-4"><textarea class="form-control" id="description" placeholder="Abilities"></textarea></div>
+  </div>
+  <br>
+  
+  <div class="form-group">
+    <label class="control-label col-xs-offset-2 col-sm-2" for="in-stock">Units in-stock</label>
+    <div class="col-xs-4"><input type="in-stock"
+    class="form-control" id="in-stock" placeholder="0"></div>
+  </div>
+</form>
       <br>
-
-      <label class="text-center" for="description">Description</label>
-      <textarea align="center" id="description" name="description" rows="5" placeholder="Abilities"></textarea>
-      <br>
-
-      <label class="text-center" for="in-stock">Units in-stock</label>
-      <input align="center" id="in-stock" name="in_stock" type="number" placeholder="0">
-      <br>
-
-    </form><br>
        
       <div align="center" class ="new-edit-buttons">
       <button col text-center id="submit" type="submit" class="btn  btn-primary">Submit</button>
       <a href="/robots/"class="btn btn-info btn-sm">Back</a>
       </div>
-      
       
       <hr style="margin-top:2em;">
       <% include ../footer %>

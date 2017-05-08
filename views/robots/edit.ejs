@@ -11,23 +11,30 @@
     <h1><%= title %></h1>
 
     <br>
-    <div class="form-group">
-    <form id="edit-robot-form" action="<%= requestUrl %>" method="<%= requestMethod %>">
-     
-      <label class="text-center" for="name">Name</label>
-      <input align="center" id="name" name="name" type="text" placeholder="Robot" value="<%= robot.name %>">
-      <br>
-      
-      <label class="text-center" for="description">Description</label>
-      <textarea align="center" rows="5" id="description" name="description" placeholder="Abilities"><%= robot.description %></textarea>
-      <br>
-      
-      <label class="text-center" for="in-stock">Units in-stock</label>
-      <input align="center" id="in-stock" name="in-stock" type="number" placeholder="0" value="<%= robot.in_stock %>">
-      <br>
-
-    </form>
+    
+<div class="container">
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+  	<label class="control-label col-xs-offset-2 col-sm-2" for="name">Name</label>
+    <div class="col-xs-4" ><input type="name" class="form-control" align="center" id="name" placeholder="Robot" value="<%= robot.name %>"></div>
   </div>
+  <br>
+  
+   <div class="form-group">
+   <label class="control-label col-xs-offset-2 col-sm-2" for="description">Description</label>
+    <div class="col-xs-4"><textarea class="form-control" id="description" placeholder="Abilities"><%= robot.description %></textarea></div>
+  </div>
+  <br>
+  
+  <div class="form-group">
+    <label class="control-label col-xs-offset-2 col-sm-2" for="in-stock">Units in-stock</label>
+    <div class="col-xs-4"><input type="in-stock"
+    class="form-control" id="in-stock" placeholder="0" value="<%= robot.in_stock %>"></div>
+  </div>
+  <br>
+</form>
+</div>
+     
       <div align="center" class ="new-edit-buttons">
       <button col text-center id="submit" type="submit" class="btn  btn-primary">Submit</button>
       <a href="/robots/"class="btn btn-info btn-sm">Back</a>
@@ -48,7 +55,7 @@
         
         
      function submitForm(event) {
-       event.preventDefault() // prevent duplicate form submission!
+       event.preventDefault() 
        const formData = {name: inputName.value, description: inputDescription.value, in_stock: inputQuantityInStock.value}
        console.log("SUBMITTING", formData)
        const requestOptions = {
@@ -62,7 +69,7 @@
              window.location = '/robots'
            })
          } else {
-           alert("Validity Error. Enter all values.")
+           alert("Error. Please enter the Robots info.")
          }
        }).catch(function(err){
          alert("Server Error. Try again shortly")
